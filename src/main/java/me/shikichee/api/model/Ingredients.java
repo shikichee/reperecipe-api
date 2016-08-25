@@ -1,15 +1,23 @@
 package me.shikichee.api.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.List;
 
 /**
  * Created by tshikichi on 2016/08/23.
  */
-public class Ingredient {
+@Document(collection = "ingredients")
+public class Ingredients {
+  @Id
   private String id;
   private String name;
   private List<String> readingName;
   private String category;
+
+  public Ingredients() {
+  }
 
   public String getId() {
     return id;
